@@ -1,0 +1,37 @@
+extends ../layout.pug
+
+mixin lista
+    ul
+        li uno
+        li dos
+        li tres
+
+mixin lista2(num)
+    ul
+        - var cont = 0;
+        while cont < num
+            li= cont++
+
+block contenido
+    h1 Index de los alumnos
+    p Recuperamos todos los alumnos
+    br
+    h2= cabecera
+    p #{mensaje} Yuju!
+    div.contenedorEnlaces#id
+        a(href="http://www.google.es") Enlace a Google
+        br
+        - var clases = ['clases1', 'clases2', 'clase3'];
+        a(class=clases) Enlace con clases
+    div
+        - var manzanas = 0
+        case manzanas
+            when 0
+                p ¡Compra manzanas!
+            when 1
+                p Tines una manzana, ¡compra!
+            default
+                p Tienes #{manzanas} ¡Deja de comprar!
+    div
+        +lista
+        +lista2(3)

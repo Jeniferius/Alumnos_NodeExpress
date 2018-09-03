@@ -1,0 +1,19 @@
+extends ../layout.pug
+
+block contenido
+    
+    form.mt-5(action="/alumnos/create" method="POST")
+        p
+        input(type="text" placeholder="Nombre" class="form-control form-control-sm" name="nombre")
+        p
+        input(type="text" placeholder="Apellido" class="form-control form-control-sm" name="apellido")
+        p
+        input(type="text" placeholder="Fecha Nacimiento" class="form-control form-control-sm" name="fecha_nacimiento")
+        p
+        input(type="text" placeholder="Nota Media" class="form-control form-control-sm" name="nota_media")
+        p
+        input(type="text" placeholder="Sexo" class="form-control form-control-sm" name="sexo")
+        p
+        input(type="text" placeholder="Escuela" class="form-control form-control-sm" name="fk_idescuela")
+        
+        input(type="submit" class="btn btn-primary") 

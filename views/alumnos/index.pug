@@ -1,0 +1,30 @@
+extends ../layout.pug
+
+block contenido
+    p Hallöchen
+
+    //- ul
+    //-     each item in alumnos
+    //-         li= item.nombre
+    //-         td
+    //-             tr
+    
+    table(class="table table-striped")
+    
+        tr
+            th Buton
+            th Nombre
+            th Apellido
+            th Fecha Nacimiento
+            th Sexo
+            th Nota Media
+        
+        each item in alumnos
+            tr
+                td
+                    a(href=`/alumnos/${item.id}`) #{item.id}
+                td= item.nombre 
+                td= item.apellido
+                td= item.fecha_nacimiento
+                td= item.sexo
+                td= item.nota_media
